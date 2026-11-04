@@ -1,0 +1,41 @@
+{
+  "name": "opencode-cyberpunk-hud",
+  "version": "0.1.0",
+  "description": "Cyberpunk themes, animated status badges, and an interactive /deck dashboard for the OpenCode TUI.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./tui": "./tui.tsx"
+  },
+  "files": [
+    "tui.tsx",
+    "themes",
+    "README.md",
+    "README.ru.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "opencode-tui",
+    "tui",
+    "terminal",
+    "cyberpunk",
+    "dashboard",
+    "theme",
+    "hud"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck"
+  },
+  "dependencies": {
+    "@opencode/plugin": "^2.2.1",
+    "@opentui/core": "^0.8.1",
+    "solid-js": "^1.9.18"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^5.9.3"
+  }
+}
