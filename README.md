@@ -55,6 +55,9 @@ running in the free space.
 ╚═══════════════════════════════════════════════════════╝
 ```
 
+<img width="1906" height="972" alt="image" src="https://github.com/user-attachments/assets/540b941f-5a3a-4683-8a5d-0456a2b37783" />
+
+
 ## Requirements
 
 - **OpenCode 2.2.x** with the TUI plugin API (tested on 2.2.1).
