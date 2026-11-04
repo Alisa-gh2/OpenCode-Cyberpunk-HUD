@@ -56,6 +56,9 @@ mission control для TUI [OpenCode](https://opencode.ai).
 ╚═══════════════════════════════════════════════════╝
 ```
 
+<img width="1906" height="972" alt="image" src="https://github.com/user-attachments/assets/a51f8fbe-0378-4b5b-8cc8-69f8392ece27" />
+
+
 ## Требования
 
 - **OpenCode 2.2.x** с TUI plugin API (проверено на 2.2.1).
