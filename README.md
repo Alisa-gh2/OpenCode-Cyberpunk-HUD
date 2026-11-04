@@ -75,7 +75,7 @@ readouts may be missing, everything else degrades gracefully).
 ### 1. Clone the plugin
 
 ```bash
-git clone https://github.com/your-name/opencode-cyberpunk-hud.git \
+git clone https://github.com/Alisa-gh2/opencode-cyberpunk-hud.git \
   ~/.config/opencode/plugins/cyberpunk-hud
 
 cd ~/.config/opencode/plugins/cyberpunk-hud
@@ -88,7 +88,7 @@ npm install --omit=dev
 For development you can keep a checkout elsewhere and symlink it:
 
 ```bash
-git clone https://github.com/your-name/opencode-cyberpunk-hud.git ~/src/opencode-cyberpunk-hud
+git clone https://github.com/Alisa-gh2/opencode-cyberpunk-hud.git ~/src/opencode-cyberpunk-hud
 cd ~/src/opencode-cyberpunk-hud && npm install
 ln -s ~/src/opencode-cyberpunk-hud ~/.config/opencode/plugins/cyberpunk-hud
 ```

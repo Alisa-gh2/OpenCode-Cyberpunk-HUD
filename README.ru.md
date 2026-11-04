@@ -77,7 +77,7 @@ mission control для TUI [OpenCode](https://opencode.ai).
 ### 1. Клонируйте плагин
 
 ```bash
-git clone https://github.com/your-name/opencode-cyberpunk-hud.git \
+git clone https://github.com/Alisa-gh2/opencode-cyberpunk-hud.git \
   ~/.config/opencode/plugins/cyberpunk-hud
 
 cd ~/.config/opencode/plugins/cyberpunk-hud
@@ -90,7 +90,7 @@ npm install --omit=dev
 Для разработки можно держать checkout в другом месте и сделать симлинк:
 
 ```bash
-git clone https://github.com/your-name/opencode-cyberpunk-hud.git ~/src/opencode-cyberpunk-hud
+git clone https://github.com/Alisa-gh2/opencode-cyberpunk-hud.git ~/src/opencode-cyberpunk-hud
 cd ~/src/opencode-cyberpunk-hud && npm install
 ln -s ~/src/opencode-cyberpunk-hud ~/.config/opencode/plugins/cyberpunk-hud
 ```
