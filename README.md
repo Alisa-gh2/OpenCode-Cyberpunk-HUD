@@ -10,9 +10,6 @@ the [OpenCode](https://opencode.ai) TUI.
 telemetry, and spend — all rendered inside the terminal, with a braille wireframe cube and a radar
 running in the free space.
 
-> **Status:** early-stage and experimental. Tested with OpenCode 2.2.1 and `@opencode/plugin` 2.2.5.
-> The TUI plugin API is young; pin your OpenCode version if you need long-term stability.
-
 [Русская версия](README.ru.md)
 
 ## Features
@@ -215,7 +212,7 @@ feedback colors stay consistent.
 | Disk | `fs.statfsSync` |
 | Battery | `/sys/class/power_supply/*` |
 
-Nothing is sent over the network, and nothing leaves your machine.
+**Nothing is sent over the network, and nothing leaves your machine.**
 
 ## Troubleshooting
 
@@ -235,17 +232,6 @@ Nothing is sent over the network, and nothing leaves your machine.
 npm install          # includes TypeScript and Node types
 npm run typecheck    # tsc --noEmit, also used by CI
 ```
-
-There is no automated runtime test suite yet (the TUI needs an interactive terminal). Manual
-checklist before a release:
-
-1. `/deck` opens; `escape` returns home without exiting OpenCode.
-2. Open `/deck` a second time — it must not crash.
-3. Sessions list updates; `enter` opens the selected session.
-4. `tab` focuses the tree; `enter` expands/collapses folders; radar hides when space runs out.
-5. `n` creates a session; `a` finds a session with a pending request.
-6. `m` freezes every animation.
-7. Resize to a narrow window — no layout corruption or clipped borders.
 
 The whole plugin is one file, [`tui.tsx`](tui.tsx), organized as: braille/ASCII renderers →
 plugin setup → state → session data → deck layout → keymap → timers.
