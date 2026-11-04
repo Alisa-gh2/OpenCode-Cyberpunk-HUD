@@ -34,28 +34,28 @@ running in the free space.
 ## Preview
 
 ```
-╔ CYBERDECK ════════════════════════════════════════╗
-║ ┌ SESSIONS ─────────────────────────────────────┐ ║
-║ │  ⠹ 12:31  refactor auth middleware            │ ║
-║ │ ▸ ! ⠋ 12:29  needs your approval              │ ║
-║ │  ·  11:58  challenge notes                    │ ║
-║ │  ... 7 rows ...                               │ ║
-║ │ ▸ YOU  last user message                      │ ║
-║ │ ◂ BOT [model]  last assistant reply           │ ║
-║ │ ID ses_xxx · $0.0000 · 1 NEED YOU             │ ║
-║ └───────────────────────────────────────────────┘ ║
-║ ┌ PROJECT ─────────┐  ┌ SYSTEM ────────────────┐  ║
-║ │ ▸ challenges     │  │ host / os / kernel      │  ║
-║ │ ▸ projects       │  │ uptime / memory / cpu   │  ║
+╔ CYBERDECK ═══════════════════════════════════════════╗
+║ ┌ SESSIONS ────────────────────────────────────────┐ ║
+║ │  ⠹ 12:31  refactor auth middleware               │ ║
+║ │ ▸ ! ⠋ 12:29  needs your approval                 │ ║
+║ │  ·  11:58  challenge notes                       │ ║
+║ │  ... 7 rows ...                                  │ ║
+║ │ ▸ YOU  last user message                         │ ║
+║ │ ◂ BOT [model]  last assistant reply              │ ║
+║ │ ID ses_xxx · $0.0000 · 1 NEED YOU                │ ║
+║ └──────────────────────────────────────────────────┘ ║
+║ ┌ PROJECT ─────────┐  ┌ SYSTEM ───────────────────┐  ║
+║ │ ▸ challenges     │  │ host / os / kernel        │  ║
+║ │ ▸ projects       │  │ uptime / memory / cpu     │  ║
 ║ │ ▸ scripts        │  │ mem  ▁▂▃▅▃▂ 42% 3.3/7.8 │  ║
 ║ │                  │  │ cpu  ▁▃▅▇▅▃ 17% 12 cores│  ║
-║ │      radar       │  │ ⣠⣦ cube ⢀⡔ ◐ CLOCK 13:57  │  ║
+║ │      radar       │  │ ⣠⣦ cube ⢀⡔ ◐ CLOCK 13:57 │  ║
 ║ │                  │  │ ⠐⠐⠁    ◢ NET eth0 10.0.2 │  ║
-║ └──────────────────┘  └────────────────────────┘  ║
-║ ▰▱▱▱▱▱ LINK STABLE… ▲ ● REC                       ║
-║ ▰▱▱▱▱▱                                          ║
-║ 3 SESSIONS │ ↑↓/jk · enter · a attention · tab · … ║
-╚═══════════════════════════════════════════════════╝
+║ └──────────────────┘  └────────────────────────────┘  ║
+║ ▰▱▱▱▱▱ LINK STABLE… ▲ ● REC                      ║
+║ ▰▱▱▱▱▱                                           ║
+║ 3 SESSIONS │ ↑↓/jk · enter · a attention · tab ·   …  ║
+╚═══════════════════════════════════════════════════════╝
 ```
 
 ## Requirements
