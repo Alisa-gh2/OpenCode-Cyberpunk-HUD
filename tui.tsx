@@ -5,7 +5,6 @@ import path from "path"
 import os from "os"
 
 const GLYPHS = "01ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ#$%&*+=-<>"
-const LIST_ROWS = 7
 const MATRIX_COLS = 16
 const MATRIX_ROWS = 6
 
@@ -363,6 +362,15 @@ export default Plugin.define({
     // Rows available inside the SYSTEM panel (terminal minus root chrome and other blocks).
     const sysBudget = () => Math.max(4, (Number(renderer.height) || 40) - 24)
 
+    // Sessions list height adapts to the actual terminal. The old build assumed
+    // a fixed 7 rows tuned to one VM's screen; small windows overflowed and
+    // large ones wasted space. clamp(4..9, terminal - 20) keeps the whole deck
+    // (sessions + project/system + footer + hints) inside the viewport.
+    const sessRows = () => {
+      const h = Number(renderer && renderer.height) || 40
+      return Math.max(4, Math.min(9, h - 20))
+    }
+
     const rebuildSysStatic = () => {
       const paneWidth = sysPaneWidth()
       sysStatic = sysRaw
@@ -413,7 +421,7 @@ export default Plugin.define({
 
     const treeViewRows = () => {
       const height = Number(renderer && renderer.height ? renderer.height : 40)
-      return Math.max(5, Math.min(12, height - LIST_ROWS - 17))
+      return Math.max(4, Math.min(12, height - sessRows() - 17))
     }
 
     const renderTree = () => {
@@ -827,14 +835,15 @@ export default Plugin.define({
       if (selected > list.length - 1) selected = Math.max(0, list.length - 1)
       if (selected !== state.selected) update((draft) => void (draft.selected = selected))
 
+      const ROWS = sessRows()
       let offset = state.offset ?? 0
       if (selected < offset) offset = selected
-      if (selected >= offset + LIST_ROWS) offset = selected - LIST_ROWS + 1
-      offset = Math.max(0, Math.min(offset, Math.max(0, list.length - LIST_ROWS)))
+      if (selected >= offset + ROWS) offset = selected - ROWS + 1
+      offset = Math.max(0, Math.min(offset, Math.max(0, list.length - ROWS)))
       if (offset !== state.offset) update((draft) => void (draft.offset = offset))
 
-      const visible = list.slice(offset, offset + LIST_ROWS)
-      for (let i = 0; i < LIST_ROWS; i++) {
+      const visible = list.slice(offset, offset + ROWS)
+      for (let i = 0; i < ROWS; i++) {
         const row = listRows[i]
         if (!row) continue
         const item = visible[i]
@@ -949,13 +958,13 @@ export default Plugin.define({
         titleColor: accent(),
         paddingX: 1,
         gap: 0,
-        height: LIST_ROWS + 5,
+        height: sessRows() + 5,
         width: "100%",
         flexShrink: 0,
         minWidth: 0,
       })
       listRows.length = 0
-      for (let i = 0; i < LIST_ROWS; i++) {
+      for (let i = 0; i < sessRows(); i++) {
         const row = text("", base())
         listRows[i] = row
         put(sessionsBox, row)
@@ -1373,7 +1382,7 @@ export default Plugin.define({
         if (!state.open || state.paused) return
         const list = rootSessions()
         const start = state.offset ?? 0
-        const visible = list.slice(start, start + LIST_ROWS)
+        const visible = list.slice(start, start + sessRows())
         for (let i = 0; i < visible.length; i++) {
           const session = visible[i]
           if (!session) continue
